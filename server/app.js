@@ -1,12 +1,26 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const mongoose = require('mongoose');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+mongoose.connect('mongodb://localhost/ladazadb', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+});
 
-var app = express();
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("We're connected to mongoose!")
+});
+
+const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth');
+
+const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -15,6 +29,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api', authRouter);
 
 module.exports = app;
