@@ -19,6 +19,7 @@ db.once('open', function() {
 
 const authRouter = require('./routes/auth');
 const adminRouter = require('./routes/admin/auth');
+const categoryRouter = require('./routes/category');
 
 const app = express();
 
@@ -30,5 +31,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', authRouter);
 app.use('/api', adminRouter);
+app.use('/api', categoryRouter);
 
 module.exports = app;

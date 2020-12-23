@@ -47,7 +47,7 @@ exports.signin = (req, res) => {
         if (error) return res.status(400).json({ error });
         if (user) {
             if (user.authenticate(req.body.password)) {
-                const token = jwt.sign({ _id: user._id }, 'rubicamp', { expiresIn: '1h' });
+                const token = jwt.sign({ _id: user._id, role: user.role }, 'rubicamp', { expiresIn: '1h' });
                 const { _id, firstName, lastName, email, role, fullName } = user;
                 res.status(200).json({
                     token,
@@ -60,11 +60,4 @@ exports.signin = (req, res) => {
             return res.status(400).json({ message: "Invalid Password!"});
         }
     })
-}
-
-exports.requireSignin = (req, res, next) => {
-    const token = req.headers.authorization.split(' ')[1];
-    const user = jwt.verify(token, 'rubicamp');
-    req.user = user;
-    next();
 }
