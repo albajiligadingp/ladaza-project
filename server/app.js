@@ -17,7 +17,6 @@ db.once('open', function() {
   console.log("We're connected to mongoose!")
 });
 
-const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const adminRouter = require('./routes/admin/auth');
 
@@ -29,7 +28,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
 app.use('/api', authRouter);
 app.use('/api', adminRouter);
 
