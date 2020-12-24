@@ -22,11 +22,14 @@ function createCategories(categories, parentId = null) {
     return categoryList;
 }
 
-
-exports.addCategory = (req, res) => {
+exports.addCategory = (req, res) => {    
     const categoryObj = {
         name: req.body.name,
         slug: slugify(req.body.name)
+    }
+
+    if (req.file) {
+        categoryObj.categoryImage = 'http://localhost:3001/public/' + req.file.filename
     }
 
     if(req.body.parentId){

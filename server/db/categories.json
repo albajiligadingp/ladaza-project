@@ -1,0 +1,6 @@
+{"_id":{"$oid":"5fe34643b5550e485933d78c"},"name":"Electronics","slug":"Electronics","createdAt":{"$date":"2020-12-23T13:29:39.194Z"},"updatedAt":{"$date":"2020-12-23T13:29:39.194Z"},"__v":0}
+{"_id":{"$oid":"5fe347babab884497a113174"},"name":"Men","slug":"Men","createdAt":{"$date":"2020-12-23T13:35:54.191Z"},"updatedAt":{"$date":"2020-12-23T13:35:54.191Z"},"__v":0}
+{"_id":{"$oid":"5fe3529bb292bb4e116f8105"},"name":"Sports","slug":"Sports","createdAt":{"$date":"2020-12-23T14:22:19.492Z"},"updatedAt":{"$date":"2020-12-23T14:22:19.492Z"},"__v":0}
+{"_id":{"$oid":"5fe3537cb292bb4e116f8106"},"name":"Mobiles","slug":"Mobiles","parentId":"5fe34643b5550e485933d78c","createdAt":{"$date":"2020-12-23T14:26:04.059Z"},"updatedAt":{"$date":"2020-12-23T14:26:04.059Z"},"__v":0}
+{"_id":{"$oid":"5fe353cfb292bb4e116f8107"},"name":"Samsung","slug":"Samsung","parentId":"5fe3537cb292bb4e116f8106","createdAt":{"$date":"2020-12-23T14:27:27.798Z"},"updatedAt":{"$date":"2020-12-23T14:27:27.798Z"},"__v":0}
+{"_id":{"$oid":"5fe43af76cffcb392fc7c5c6"},"name":"Realme","slug":"Realme","categoryImage":"http://localhost:3001/public/1nEw3HMVF-realme.png","parentId":"5fe3537cb292bb4e116f8106","createdAt":{"$date":"2020-12-24T06:53:43.844Z"},"updatedAt":{"$date":"2020-12-24T06:53:43.844Z"},"__v":0}
