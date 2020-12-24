@@ -253,12 +253,12 @@ const Header = (props) => {
                             { label: "Download App", href: "", icon: null },
                         ]}
                     />
-                    <div>
+                    {/* <div>
                         <a href={`/cart`} className="cart">
                             <Cart count={Object.keys(cart.cartItems).length} />
                             <span style={{ margin: "0 10px" }}>Cart</span>
                         </a>
-                    </div>
+                    </div> */}
                 </div>
                 {/* right side menu ends here */}
             </div>
