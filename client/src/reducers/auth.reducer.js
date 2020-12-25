@@ -3,27 +3,28 @@ import { authConstants } from "../actions/constants";
 const initState = {
     token: null,
     user: {
-        firstName: "",
-        lastName: "",
-        email: "",
-        picture: "",
+        firstName: '',
+        lastName: '',
+        email: '',
+        picture: ''
     },
     authenticate: false,
     authenticating: false,
     loading: false,
     error: null,
-    message: "",
+    message: ''
 };
 
 export default (state = initState, action) => {
+
     console.log(action);
 
     switch (action.type) {
         case authConstants.LOGIN_REQUEST:
             state = {
                 ...state,
-                authenticating: true,
-            };
+                authenticating: true
+            }
             break;
         case authConstants.LOGIN_SUCCESS:
             state = {
@@ -31,38 +32,30 @@ export default (state = initState, action) => {
                 user: action.payload.user,
                 token: action.payload.token,
                 authenticate: true,
-                authenticating: false,
-            };
+                authenticating: false
+            }
             break;
         case authConstants.LOGOUT_REQUEST:
             state = {
                 ...state,
-                loading: true,
-            };
+                loading: true
+            }
             break;
         case authConstants.LOGOUT_SUCCESS:
             state = {
-                ...initState,
-            };
+                ...initState
+            }
             break;
         case authConstants.LOGOUT_FAILURE:
             state = {
                 ...state,
                 error: action.payload.error,
-                loading: false,
-            };
+                loading: false
+            }
             break;
-        case authConstants.SIGNUP_REQUEST:
-            break;
-        case authConstants.SIGNUP_SUCCESS:
-            break;
-        case authConstants.SIGNUP_FAILURE:
-            state = {
-                ...state,
-                error: action.payload.error,
-            };
-            break;
+
     }
 
+
     return state;
-};
+}
