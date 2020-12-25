@@ -1,4 +1,4 @@
-const baseUrl = process.env.API || "http://localhost:3001"
+const baseUrl = process.env.API || "http://localhost:3001/api"
 //"https://flipkart-rest-server.herokuapp.com";
 //const baseUrl = "http://localhost:2000";
 
