@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
-import './style.css';
+import "./style.css";
 import flipkartLogo from "../../images/logo/flipkart.png";
 import goldenStar from "../../images/logo/golden-star.png";
-import { IoIosArrowDown, IoIosSearch, IoIosCart } from "react-icons/io";
-import { Modal, MaterialInput, MaterialButton, DropdownMenu } from "../MaterialUI";
+import { IoIosArrowDown, IoIosCart, IoIosSearch } from "react-icons/io";
+import {
+    Modal,
+    MaterialInput,
+    MaterialButton,
+    DropdownMenu,
+} from "../MaterialUI";
 import { useDispatch, useSelector } from "react-redux";
 import { login, signout, getCartItems, signup as _signup } from "../../actions";
 import Cart from "../UI/Cart";
 
-
+/**
+ * @author
+ * @function Header
+ **/
 
 const Header = (props) => {
     const [loginModal, setLoginModal] = useState(false);
@@ -97,7 +105,7 @@ const Header = (props) => {
                         }}
                     >
                         Login
-            </a>
+          </a>
                 }
                 menus={[
                     { label: "My Profile", href: "", icon: null },
@@ -125,7 +133,7 @@ const Header = (props) => {
                             style={{ color: "#2874f0" }}
                         >
                             Sign Up
-              </a>
+            </a>
                     </div>
                 }
             />
@@ -253,12 +261,12 @@ const Header = (props) => {
                             { label: "Download App", href: "", icon: null },
                         ]}
                     />
-                    {/* <div>
+                    <div>
                         <a href={`/cart`} className="cart">
                             <Cart count={Object.keys(cart.cartItems).length} />
                             <span style={{ margin: "0 10px" }}>Cart</span>
                         </a>
-                    </div> */}
+                    </div>
                 </div>
                 {/* right side menu ends here */}
             </div>
