@@ -23,33 +23,21 @@ const productSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    offer: {
-        type: Number
-    },
+    offer: { type: Number },
     productPictures: [
-        {
-            img: {
-                type: String
-            }
-        }
+        { img: { type: String } }
     ],
     reviews: [
         {
             userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
             review: String
         }
-    ], 
-    category: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'Category',
-        required: true
-    },
-    createdBy: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'User',
-        required: true
-    }, 
-    updatedAt: {
-        type: Date
-    }
-}, { timestamps: true })
+    ],
+    category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true },
+    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    updatedAt: Date,
+
+}, { timestamps: true });
+
 
 module.exports = mongoose.model('Product', productSchema);
