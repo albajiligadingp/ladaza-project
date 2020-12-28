@@ -64,9 +64,9 @@ const Header = (props) => {
         }
     }, [auth.authenticate]);
 
-    // useEffect(() => {
-    //   dispatch(getCartItems());
-    // }, []);
+    useEffect(() => {
+      dispatch(getCartItems());
+    }, []);
 
     const renderLoggedInMenu = () => {
         return (
