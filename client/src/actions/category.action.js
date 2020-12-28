@@ -21,7 +21,5 @@ export const getAllCategory = () => {
                 payload: { error: res.data.error }
             });
         }
-
-
     }
 }

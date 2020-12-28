@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProductsBySlug } from '../../../actions';
 import { generatePublicUrl } from '../../../urlConfig';
 import { Link } from 'react-router-dom';
+import Card from "../../../components/UI/Card";
 
 /**
 * @author

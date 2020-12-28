@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
 
-/**
- * @author 
- * @function
- **/
 
 const Modal = (props) => {
     if (!props.visible) {
